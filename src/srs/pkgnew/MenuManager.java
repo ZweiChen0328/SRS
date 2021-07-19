@@ -12,7 +12,7 @@ public class MenuManager extends MenuFX {
         b1.setText("Change password");
         b1.setOnAction(e -> {
             try {
-                new password(id);
+                new password(id,"Manager");
             } catch (java.sql.SQLException b) {
             }
             ((Node) (e.getSource())).getScene().getWindow().hide();

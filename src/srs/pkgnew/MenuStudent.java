@@ -15,7 +15,7 @@ public class MenuStudent extends MenuFX {
             @Override
             public void handle(ActionEvent event) {
                 try {
-                    new password(id);
+                    new password(id,"Student");
                 } catch (java.sql.SQLException b) {
                 }
                 ((Node) (event.getSource())).getScene().getWindow().hide();

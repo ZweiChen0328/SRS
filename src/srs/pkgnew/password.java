@@ -18,7 +18,7 @@ public class password {
 
     private static Connection conn = connect.getConnection();//連接數據庫
 
-    public password(String ID) throws SQLException {
+    public password(String ID,String work) throws SQLException {
 
         GridPane grid = new GridPane();
         grid.setAlignment(Pos.CENTER);
@@ -57,9 +57,15 @@ public class password {
         });
         back.setOnAction(e -> {
             try {
-                ((Node) (e.getSource())).getScene().getWindow().hide();
-                MenuStudent a = new MenuStudent();
-                a.newWindow(ID);
+                if(work.equals("Student")){
+                    ((Node) (e.getSource())).getScene().getWindow().hide();
+                    MenuStudent a = new MenuStudent();
+                    a.newWindow(ID);
+                }else if(work.equals("Manager")){
+                    ((Node) (e.getSource())).getScene().getWindow().hide();
+                    MenuManager a = new MenuManager();
+                    a.newWindow(ID);
+                }
             } catch (java.sql.SQLException b) {
             }
         });
